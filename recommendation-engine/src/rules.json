@@ -1,0 +1,33 @@
+[{
+    "name": "Skip content",
+    "conditions": {
+      "all": [
+        {
+          "fact": "proficiency_scores",
+          "operator": "valuesGreaterThanInclusive",
+          "value": 90
+        }
+      ]
+    },
+    "event": {
+      "type": "skip"
+    },
+    "priority": 1,
+    "params_req": ["proficiency_scores"]
+  }, {
+    "conditions": {
+        "all": [
+          {
+            "fact": "proficiency_scores",
+            "operator": "valuesLessThan",
+            "value": 90
+          }
+        ]
+      },
+      "event": {
+        "type": "keep"
+      },
+      "priority": 1,
+      "params_req": ["proficiency_scores"]
+  }]
+  
